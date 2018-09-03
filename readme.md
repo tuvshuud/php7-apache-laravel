@@ -1,6 +1,21 @@
 # php7-apache-laravel
-Docker image source for Laravel 5.6.x
+Docker image for Laravel 5.6.x
 
+## Packages
+  - php7.2 
+  - php7.2-mysql 
+  - php7.2-mbstring
+  - php7.2-soap 
+  - php7.2-cli 
+  - php7.2-dev 
+  - php7.2-ldap 
+  - php7.2-gd
+  - php7.2-zip 
+  - apache2
+  - zip 
+  - unzip
+  - composer
+  
 ## Instruction
 To use this image in your project, you need to mount following directories.
   - /app
@@ -22,4 +37,7 @@ docker run -p 8000:80 -v <your_project>/public:/var/www/html/public \
   --name <container_name> tuvshuud/github
 ```
 
-To extend this image for your project by adding custom dependency and libraries, see the [example](https://github.com/tuvshuud/php7-apache-laravel/example).
+To extend this image for your project by adding custom dependency and libraries, see the [example](https://github.com/tuvshuud/php7-apache-laravel/tree/master/example).
+
+Note: This image uses mirror.datacenter.mn as mirror ubuntu repository. You may need to comment out following line in a [Dockerfile](https://github.com/tuvshuud/php7-apache-laravel/blob/master/Dockerfile) to use the default one.  
+`RUN sed -i s/archive.ubuntu.com/mirror.datacenter.mn/i /etc/apt/sources.list`
