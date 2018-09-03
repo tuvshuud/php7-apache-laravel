@@ -25,7 +25,7 @@ To use this image in your project, you need to mount following directories.
   - /public
  
  Command to build:  
- `docker build --compress docker build --compress --tag tuvshuud/php7-apache-laravel:latest .`
+ `docker build --compress docker build --compress --tag php7-apache-laravel:latest .`
  
  Command to run:  
 ```bash
@@ -34,7 +34,7 @@ docker run -p 8000:80 -v <your_project>/public:/var/www/html/public \
   -v <your_project>/routes:/var/www/html/routes \
   -v <your_project>/resources:/var/www/html/resources \
   -v <your_project>/config:/var/www/html/config \
-  --name <container_name> tuvshuud/github
+  --name <container_name> php7-apache-laravel:latest
 ```
 
 To extend this image for your project by adding custom dependency and libraries, see the [example](https://github.com/tuvshuud/php7-apache-laravel/tree/master/example).
