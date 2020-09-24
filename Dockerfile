@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Tuvshinbayar Davaa <tuvshuud@gmail.com>
 
 ENV LC_ALL=C.UTF-8
@@ -9,9 +9,9 @@ RUN apt update \
     && add-apt-repository ppa:ondrej/php \
     && apt update
 
-RUN apt install -y php7.2 php7.2-mysql php7.2-mbstring \
-    php7.2-soap php7.2-cli php7.2-dev php7.2-ldap php7.2-gd \
-    php7.2-zip zip unzip
+RUN apt install -y php7.4 php7.4-mysql php7.4-mbstring \
+    php7.4-soap php7.4-cli php7.4-dev php7.4-ldap php7.4-gd \
+    php7.4-zip zip unzip
 RUN apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY conf/ /opt/docker/
